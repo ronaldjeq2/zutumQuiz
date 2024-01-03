@@ -7,7 +7,6 @@ export const AppView = () => {
     <>
       <img src={reactLogo} className="logo react" alt="React logo" />
       <h1>Dev-quiz</h1>
-
     </>
   )
 }
