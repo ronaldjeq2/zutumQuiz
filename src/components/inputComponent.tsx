@@ -1,4 +1,5 @@
 import {forwardRef} from 'react';
+import './inputComponent.css'
 
 interface IInputComponentProps {
     id: string;
@@ -11,8 +12,8 @@ type Ref = HTMLInputElement;
 const InputComponent = forwardRef<Ref, IInputComponentProps>((props, ref) => {
         const {id, type="text", label} = props
         return (
-        <div>
-            <label>{label}: </label>
+        <div className="input-container">
+            <h4>{label}: </h4>
             <input id={id} type={type} ref={ref} />
         </div>
     )}
