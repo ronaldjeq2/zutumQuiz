@@ -1,20 +1,22 @@
-import {FC} from 'react';
+import {forwardRef} from 'react';
 
-interface IInputComponent {
+interface IInputComponentProps {
     id: string;
     type?: string;
     label: string;
 }
 
-const InputComponent: FC<IInputComponent> = ({id, type="text", label}) => {
+type Ref = HTMLInputElement;
 
-  return (
-    <div>
-        <label>{label}: </label>
-        <input id={id} type={type} />
-    </div>
+const InputComponent = forwardRef<Ref, IInputComponentProps>((props, ref) => {
+        const {id, type="text", label} = props
+        return (
+        <div>
+            <label>{label}: </label>
+            <input id={id} type={type} ref={ref} />
+        </div>
+    )}
+)
 
-  )
-}
 
 export default InputComponent
