@@ -6,8 +6,12 @@ function App() {
   const grifoRef = useRef(null)
   const costoRef = useRef(null)
 
+  const onHandlePress = ()=> {
+   
+  }
+
   return (
-    <AppView grifoRef={grifoRef} costoRef={costoRef} />
+    <AppView onCalculatePress={onHandlePress} grifoRef={grifoRef} costoRef={costoRef} />
   )
 }
 
