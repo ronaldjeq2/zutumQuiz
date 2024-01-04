@@ -7,15 +7,17 @@ interface IAppViewtProps {
     grifoRef: React.Ref<HTMLInputElement> | null;
     costoRef: React.Ref<HTMLInputElement> | null;
     onCalculatePress: () => void;
+    resultText?: string
 }
 
 
-export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePress}) => {
+export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePress, resultText=""}) => {
    
   return (
     <>
       <img src={reactLogo} className="logo react" alt="React logo" />
       <h1>Dev-quiz</h1>
+      <h2>Agregar numeros separados por ,</h2>
       <InputComponent ref={grifoRef} id='grifoList' label='grifo' type='text'/>
       <InputComponent ref={costoRef} id='costoList' label='costo' type='text'/>
       <div className="card">
@@ -23,6 +25,9 @@ export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePres
           Calcular resultado
         </button>
       </div>
+      <h3>
+        {resultText}
+      </h3>
     </>
   )
 }
