@@ -26,7 +26,7 @@ export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePres
           Calcular resultado
         </button>
       </div>
-      <h3>
+      <h3 data-testid="result">
         {resultText}
       </h3>
     </>
