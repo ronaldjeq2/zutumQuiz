@@ -8,10 +8,11 @@ interface IAppViewtProps {
     costoRef: React.Ref<HTMLInputElement> | null;
     onCalculatePress: () => void;
     resultText?: string
+    isValid: boolean
 }
 
 
-export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePress, resultText=""}) => {
+export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePress, resultText="", isValid}) => {
    
   return (
     <>
@@ -21,7 +22,7 @@ export const AppView: FC<IAppViewtProps> = ({grifoRef, costoRef, onCalculatePres
       <InputComponent ref={grifoRef} id='grifoList' label='grifo' type='text'/>
       <InputComponent ref={costoRef} id='costoList' label='costo' type='text'/>
       <div className="card">
-        <button onClick={onCalculatePress}>
+        <button disabled={!isValid} onClick={onCalculatePress}>
           Calcular resultado
         </button>
       </div>
