@@ -14,7 +14,7 @@ const InputComponent = forwardRef<Ref, IInputComponentProps>((props, ref) => {
         return (
         <div className="input-container">
             <h4>{label}: </h4>
-            <input id={id} type={type} ref={ref} />
+            <input data-testid={id} id={id} type={type} ref={ref} />
         </div>
     )}
 )
